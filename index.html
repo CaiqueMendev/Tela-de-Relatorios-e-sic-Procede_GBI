@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatorios</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+  <main>
+
+    <h1>Relatórios de Atendimento</h1>
+    <div class="container">
+      <p>
+        O relatóio pode ser extraío por orgão ou período desejado pelo usuário (em intervalos mensais) podendo ser
+        visualizado no prório navegador
+        (Google Chrome, Mozilla Firefoz e Microsoft Internet Explorer) ou exportado para diversos formatos: Excel, CSV e
+        JSON.
+
+      </p>
+
+      
+      <form action="" method="get" class="main_form">
+
+          <div class="campo" id="campo_orgao">
+
+            <label for="orgao">Orgão</label>
+
+            <select name="orgao" id="filtro_orgao">
+              <option value="">Todos os Orgãos</option>
+              <option value="acessoria_juridica">ACESSORIA JURIDICA</option>
+              <option value="ascom">DEPARTAMENTO DE COMUNICAÇÃO (ASCOM)</option>
+              <option value="secretaria_cultura">SECRETARIA DE CULTURA</option>
+              <option value="controladoria_geral">CONTROLADORIA GERAL DO MUNICÍPIO</option>
+              <option value="gabinete_prefeito">GABINETE DO PREFEITO</option>
+              <option value="secretaria_fazenda">SECRETARIA DA FAZENDA</option>
+              <option value="secretaria_administracao">SECRETARIA DE ADMINISTRAÇÃO</option>
+              <option value="secretaria_agricultura_meioambiente">SECRETARIA DE AGRICULTURA E MEIO AMBIENTE</option>
+              <option value="secretaria_assistenciasocial">SECRETARIA DE ASSISTÊNCIA SOCIAL</option>
+              <option value="secretaria_infraestrutura">SECRETARIA DE INFRAESTRUTURA</option>
+              <option value="secretaria_educacao">SECRETARIA DE EDUCAÇÃO</option>
+              <option value="secretaria_esporte_turismo_lazer">SECRETARIA DE ESPORTE, TURISMO E LAZER</option>
+              <option value="secretaria_industria_comercio">SECRETARIA DE INDÚSTRIA E COMÉRCIO</option>
+              <option value="secretaria_planejamento">SECRETARIA DE PLANEJAMENTO</option>
+              <option value="secretaria_saude">SECRETARIA DE SAÚDE</option>
+              <option value="secretaria_governo">SECRETARIA DE GOVERNO</option>
+            </select>
+
+          </div>
+         
+    
+
+        <div class="data_div">
+
+          <div class="campo_data" id="campo_data_inicial">
+            <label for="">Data Inicial</label>
+            <input type="date" id="data_inicial">
+          </div>
+
+          <div class="campo_data" id="campo_data_final">
+            <label for="">Data Final</label>
+            <input type="date" id="data_final">
+          </div>
+
+        </div>
+
+      </form>
+
+      <div class="buttons">
+        
+        <button class="form_button">
+          <i class="fa-solid fa-download" style="color: #ffffff;"></i>
+          <span>Baixar Relatório</span>
+        </button>
+
+        <button class="form_button">
+          <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+          <span>Pesquisar</span>
+        </button>
+
+      </div>
+
+    </div>
+    <div class="tabela paginated-table">
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>Orgão</th>
+            <th>Recebidas</th>
+            <th>Atendidas</th>
+            <th>Indeferidas</th>
+            <th>PF</th>
+            <th>PJ</th>
+            <th>Residente</th>
+            <th>Não Residente</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>ASSESSORIA JURIDICA</td>
+            <td>33</td>
+            <td>33</td>
+            <td>0</td>
+            <td>32</td>
+            <td>1</td>
+            <td>11</td>
+            <td>22</td>
+          </tr>
+          <tr>
+            <td>DEPARTAMENTO DE COMUNICAÇÃO (ASCOM)</td>
+            <td>9</td>
+            <td>9</td>
+            <td>0</td>
+            <td>9</td>
+            <td>0</td>
+            <td>7</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>SECRETARIA DE CULTURA</td>
+            <td>10</td>
+            <td>10</td>
+            <td>0</td>
+            <td>10</td>
+            <td>0</td>
+            <td>0</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>CONTROLADORIA GERAL DO MUNICÍPIO</td>
+            <td>17</td>
+            <td>17</td>
+            <td>0</td>
+            <td>17</td>
+            <td>0</td>
+            <td>3</td>
+            <td>14</td>
+          </tr>
+          <tr>
+            <td>GABINETE DO PREFEITO</td>
+            <td>17</td>
+            <td>17</td>
+            <td>0</td>
+            <td>17</td>
+            <td>0</td>
+            <td>9</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>SECRETARIA DA FAZENDA</td>
+            <td>145</td>
+            <td>143</td>
+            <td>0</td>
+            <td>114</td>
+            <td>31</td>
+            <td>37</td>
+            <td>108</td>
+          </tr>
+          <tr>
+            <td>SECRETARIA DE ADMINISTRAÇÃO</td>
+            <td>40</td>
+            <td>40</td>
+            <td>0</td>
+            <td>38</td>
+            <td>2</td>
+            <td>23</td>
+            <td>17</td>
+          </tr>
+          <tr>
+            <td>SECRETARIA DE AGRICULTURA E MEIO AMBIENTE</td>
+            <td>11</td>
+            <td>10</td>
+            <td>0</td>
+            <td>9</td>
+            <td>2</td>
+            <td>7</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>SECRETARIA DE ASSISTÊNCIA SOCIAL</td>
+            <td>15</td>
+            <td>15</td>
+            <td>0</td>
+            <td>15</td>
+            <td>0</td>
+            <td>9</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>SECRETARIA DE INFRAESTRUTURA</td>
+            <td>66</td>
+            <td>66</td>
+            <td>0</td>
+            <td>62</td>
+            <td>4</td>
+            <td>48</td>
+            <td>18</td>
+          </tr>
+          <tr>
+            <td>SECRETARIA DE EDUCAÇÃO</td>
+            <td>17</td>
+            <td>17</td>
+            <td>0</td>
+            <td>17</td>
+            <td>0</td>
+            <td>11</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>SECRETARIA DE ESPORTE, TURISMO E LAZER</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>SECRETARIA DE INDÚSTRIA E COMÉRCIO</td>
+            <td>13</td>
+            <td>13</td>
+            <td>0</td>
+            <td>10</td>
+            <td>3</td>
+            <td>8</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>SECRETARIA DE PLANEJAMENTO</td>
+            <td>6</td>
+            <td>6</td>
+            <td>0</td>
+            <td>4</td>
+            <td>2</td>
+            <td>1</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>SECRETARIA DE SAÚDE</td>
+            <td>26</td>
+            <td>26</td>
+            <td>0</td>
+            <td>24</td>
+            <td>2</td>
+            <td>18</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>SECRETARIA DO GOVERNO</td>
+            <td>3</td>
+            <td>3</td>
+            <td>0</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td>Totalizadores:</td>
+            <td>429</td>
+            <td>426</td>
+            <td>0</td>
+            <td>381</td>
+            <td>48</td>
+            <td>195</td>
+            <td>234</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="pagination"></div>
+
+  <!--Graficos-->
+  <div class="graph_div">
+    <h2>Gráficos Estatísticos</h2>
+    <div id="graficos">
+      
+      <div class="graph" id="status_solicitacoes">
+        <img src="imgs/Screenshot from 2024-10-28 16-55-11.png">
+      </div>
+    
+      <div class="graph" id="pf_x_pj">
+        <img src="imgs/Screenshot from 2024-10-28 16-55-11.png">
+      </div>
+    
+      <div class="graph" id="locais_solicitacoes">
+        <img src="imgs/Screenshot from 2024-10-28 16-55-11.png">
+      </div>
+    </div>
+
+  </div>
+
+   <!--table2-->
+  <div class="tabela paginated-table">
+  <table class="total_orgao">
+    <thead>
+      <tr>
+        <th style="background-color: #005727;" colspan="2">Total por Orgão</th>
+      </tr>
+      <tr>
+        <th>Orgão</th>
+        <th>Nº de Solicitações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ASSESSORIA JURIDICA</td>
+        <td>33</td>
+      </tr>
+      <tr>
+        <td>CONTROLADORIA GERAL DO MUNICÍPIO</td>
+        <td>17</td>
+      </tr>
+      <tr>
+        <td>DEPARTAMENTO DE COMUNICAÇÃO (ASCOM)</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>GABINETE DO PREFEITO</td>
+        <td>18</td>
+      </tr>
+      <tr>
+        <td>SECRETARIA DA FAZENDA</td>
+        <td>146</td>
+      </tr>
+      <tr>
+        <td>SECRETARIA DE ADMINISTRAÇÃO</td>
+        <td>40</td>
+      </tr>
+      <tr>
+        <td>SECRETARIA DE AGRICULTURA E MEIO AMBIENTE</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>SECRETARIA DE ASSISTÊNCIA SOCIAL</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>SECRETARIA DE CULTURA</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>SECRETARIA DE EDUCAÇÃO</td>
+        <td>17</td>
+      </tr>
+      <tr>
+        <td>SECRETARIA DE ESPORTE, TURISMO E LAZER</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>SECRETARIA DE INDÚSTRIA E COMÉRCIO</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td>SECRETARIA DE INFRAESTRUTURA</td>
+        <td>66</td>
+      </tr>
+      <tr>
+        <td>SECRETARIA DE PLANEJAMENTO</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>SECRETARIA DE SAÚDE</td>
+        <td>26</td>
+      </tr>
+      <tr>
+        <td>SECRETARIA DE GOVERNO</td>
+        <td>3</td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+  <div class="pagination"></div>
+ 
+
+    <div class="quant_solicitacoes">
+      <h2>Quantidade de solicitações</h2>
+      <div class="grafico_barras">
+        <form action="" class="filtro_data">
+          <label for="filtro_dataInicial">Data Inicial:</label>
+          <input type="date" name="" id="">
+
+          <label for="filtro_dataFinal">Data Final:</label>
+          <input type="date" name="" id="">
+          
+          
+        </form>
+        <img src="imgs/Screenshot from 2024-10-29 09-23-29.png" alt="">
+      </div>
+
+      <div class="tabela">
+        <table class="evolucao">
+          <thead>
+            <tr>
+              <th style="background-color: #005727;" colspan="4">Evolução mensal da quantidade de solicitações de acesso à informação</th>
+            </tr>
+            <tr>
+              <th>Meses de referência</th>
+              <th>Evolução mensal</th>
+              <th>Total de solicitações</th>
+              <th>Média total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>/04-2024</td>
+              <td>0.00%</td>
+              <td>2</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>04-2024/05-2024</td>
+              <td>200.00%</td>
+              <td>8</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>05-2024/07-2024</td>
+              <td>-16.67%</td>
+              <td>11</td>
+              <td>5.5</td>
+            </tr>
+            <tr>
+              <td>07-2024/08-2024</td>
+              <td>20.00%</td>
+              <td>11</td>
+              <td>5.5</td>
+            </tr>
+            <tr>
+              <td>08-2024/09-2024</td>
+              <td>-16.67%</td>
+              <td>11</td>
+              <td>5.5</td>
+            </tr>
+            <tr>
+              <td>09-2024/10-2024</td>
+              <td>40.00%</td>
+              <td>12</td>
+              <td>6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="solicitacoes_tipo_resposta">
+      <h2>Solicitações por tipo de resposta</h2>
+      
+      <div class="tipo_solicitacao_content">
+        <div class="grafico_tipo_solicitacao">
+          <img src="imgs/Screenshot from 2024-10-29 10-37-00.png" alt="">
+        </div>
+
+        <div class="tabela">
+          <table class="tipo_solicitacao">
+            <thead>
+              <tr>
+                <th style="background-color: #005727;" colspan="3">Tipo de solicitante</th>
+              </tr>
+              <tr>
+                <th>TIPO</th>
+                <th>QUANTIDADE</th>
+                <th>PORCENTAGEM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Física</td>
+                <td>383</td>
+                <td>88.66%</td>
+              </tr>
+              <tr>
+                <td>Juridica</td>
+                <td>49</td>
+                <td>11.34%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const rowsPerPage = 6;
+        const tables = document.querySelectorAll(".paginated-table");
+    
+        tables.forEach((table, index) => {
+            const tbody = table.querySelector("tbody");
+            const rows = Array.from(tbody.querySelectorAll("tr"));
+            const pagination = table.nextElementSibling;
+    
+            let currentPage = 1;
+            const totalPages = Math.ceil(rows.length / rowsPerPage);
+    
+            function displayPage(page) {
+                tbody.innerHTML = ""; 
+                const start = (page - 1) * rowsPerPage;
+                const end = start + rowsPerPage;
+                const pageRows = rows.slice(start, end);
+    
+                pageRows.forEach(row => tbody.appendChild(row));
+                updatePagination();
+            }
+    
+            function updatePagination() {
+                pagination.innerHTML = ""; 
+                for (let i = 1; i <= totalPages; i++) {
+                    const button = document.createElement("button");
+                    button.textContent = i;
+                    button.classList.add("pagination-button");
+                    if (i === currentPage) {
+                        button.classList.add("active");
+                    }
+                    button.addEventListener("click", function() {
+                        currentPage = i;
+                        displayPage(currentPage);
+                    });
+                    pagination.appendChild(button);
+                }
+            }
+    
+            displayPage(currentPage); 
+        });
+    });
+    </script>
+  
+</body>
+
+</html>

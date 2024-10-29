@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    box-shadow: none;
+}
+
+.icon {
+    font-size: 1.5rem;
+    margin: 0.5rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+main {
+    background-color: white;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    gap: 2.5rem;
+}
+
+h1 {
+    width: 75%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.container {
+  gap: 1rem;
+  width: 75%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 0.5fr;
+  grid-template-areas: 
+  "p form"
+  "p form"
+  "p buttons"
+  ;
+}
+
+p {
+  
+    width: 75%;
+    font-size: 1rem;
+    font-weight: normal;
+    grid-area: p;
+    height: max-content;
+    align-self: center;
+
+    border-left: 7px solid #00843C;
+    padding-left: 0.75rem;
+}
+
+.main_form {
+    width: 100%;
+    display: grid;
+    grid-area: form;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "orgao orgao"
+    "dates dates"
+    ;
+
+}
+
+label {
+  font-weight: bold;
+}
+
+
+#campo_orgao {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-grow: 1;
+    grid-area: orgao;
+}
+
+.data_div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    gap: 1rem;
+    grid-area: dates;
+}
+
+.campo_data {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 0.5rem;
+}
+
+input[type="date"] {
+    width: 100%;
+    height: 2rem;
+    background-color: #b7e9b2;
+    border: 1px solid grey;
+}
+
+input[type="date"]::placeholder {
+  color: transparent;
+}
+
+
+select {
+    width: 100%;
+    height: 2rem; 
+    background-color: #b7e9b2;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    grid-area: buttons;
+}
+
+.form_button {
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 48.5%;
+    background-color: #00843C;
+    border: 1px solid grey;
+}
+
+.form_button i {
+  padding: 0.5rem;
+}
+
+.form_button span {
+    padding-right: 0.5rem;
+    font-weight: bold;
+    color: #f9f9f9;
+}
+
+
+.tabela {
+  font-size: 0.75rem;
+  width: 75%;
+  overflow-x: auto;
+}
+
+#dataTable {
+  border: 2px solid #00843C;
+}
+
+.tabela table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.tabela th, .tabela td {
+  padding: 0.75rem;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.tabela th {
+  background-color: #00843C; 
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.tabela tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tabela tbody tr:nth-child(odd) {
+  background-color: #b7e9b2;
+}
+
+.tabela tfoot td {
+  text-transform: uppercase;
+  background-color: #00843C;
+  color: #fff;
+  font-weight: bold;
+}
+
+#dataTable td:first-child, .total_orgao th:first-child, #dataTable th:first-child {
+  position: sticky;
+  left: 0;
+  background-color: #00843C;
+  color: #fff;
+  z-index: 1;
+  text-align: left;
+  text-wrap: nowrap;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.pagination-button {
+  padding: 0.5rem 0.5rem;
+  background-color: #005727;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination-button.active {
+  background-color: #003f1a;
+  font-weight: bold;
+}
+
+.pagination-button:hover {
+  background-color: #007c3f;
+}
+
+h2 {
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+
+.graph_div {
+  text-align: center;
+  width: 75%;
+}
+
+
+#graficos {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.graph {
+  width: 30%;
+  border: 1px solid #00843C;
+}
+
+.graph img, .grafico_tipo_solicitacao img {
+  width: 100%;
+  object-fit:contain;
+}
+
+.total_orgao th:nth-last-child(1) {
+  text-align: center;
+}
+
+.total_orgao tbody td:nth-child(1), .tipo_solicitacao tbody td:nth-child(1), .tipo_solicitacao thead tr:last-child :nth-child(1){
+  left: 0;
+  text-align: left;
+  text-wrap: nowrap;
+}
+
+
+.quant_solicitacoes, .solicitacoes_tipo_resposta {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 2px solid #005727;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.quant_solicitacoes h2, .solicitacoes_tipo_resposta h2 {
+  background-color: #005727;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.grafico_barras {
+  width: 94%;
+  display: flex;
+  flex-direction: column;
+  padding: 1% 3%;
+  gap: 1rem;
+}
+
+.filtro_data {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  text-wrap: nowrap;
+  align-items: center;
+}
+
+.evolucao th{
+  text-align: center;
+}
+
+.tipo_solicitacao_content {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+main {
+  padding-bottom: 5rem;
+}
